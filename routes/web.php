@@ -6,6 +6,7 @@ use App\Http\Controllers\Web;
 use App\Http\Controllers\Homepage;
 use App\Http\Controllers\Forms;
 use App\Http\Controllers\DbOperations;
+use App\Http\Controllers\DbOperationsWithModel;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +30,8 @@ Route::get('/add',[DbOperations::class,'add']);
 Route::get('/update',[DbOperations::class,'update']);
 Route::get('/delete',[DbOperations::class,'delete']);
 Route::get('/list',[DbOperations::class,'getRecords']);
+
+Route::get('listwithmodel',[DbOperationsWithModel::class,'getRecords']);
+Route::get('addwithmodel',[DbOperationsWithModel::class,'add']);
+Route::get('updatewithmodel',[DbOperationsWithModel::class,'update']);
+Route::get('deletewithmodel',[DbOperationsWithModel::class,'delete']);
